@@ -34,6 +34,7 @@ async function getData() {
             activeTimeFrame = t;
             if(t.textContent === 'Daily') {
                 for(let i=0; i<6; i++) {
+                    //for each card put the data of current and previous
                     putData(obj_arr[i].daily,hourData[i],previousData[i]);
                 }
             }
@@ -53,14 +54,15 @@ async function getData() {
 
 
 function putData(value,hourData,previousData) {
-    let counter = 0;
     let current = value.current;
     let previous = value.previous;
     let currentText = "";
     let previousText = "";
 
-    hourData.classList.add('hide');
+    hourData.classList.add('hide'); //for the transition
     previousData.classList.add('hide');
+
+    //timeout for the transition of opacity
     setTimeout(function() {
         if(value.current === 1) {
             currentText = `${current}hr`;
@@ -69,6 +71,7 @@ function putData(value,hourData,previousData) {
             currentText = `${current}hrs`;
         }
         hourData.textContent = currentText;
+
         if(value.previous === 1){
             previousText = `Last week - ${previous}hr`;
         }
@@ -77,12 +80,9 @@ function putData(value,hourData,previousData) {
         }
         previousData.textContent = previousText;
 
+        //show them again
         hourData.classList.remove('hide');
         previousData.classList.remove('hide');
-        counter++
-        if(counter >= value.current.length && counter>=value.previous.length){
-            counter = 0;
-        }
     },400);
    
 }
