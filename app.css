@@ -1,0 +1,260 @@
+body {
+    margin:0;
+    font-family: 'Rubik', sans-serif;
+    background-color:hsl(226, 43%, 10%);
+    color:white;
+}
+
+main {
+    max-width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+}
+
+#container {
+    width:20rem;
+    height:100%;
+}
+
+#info-div {
+    width:90%;
+    margin:5% auto 0;
+    background-color:hsl(235, 46%, 20%);
+    height:20vh;
+}
+
+#general-info {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:hsl(246, 80%, 60%);
+    border-radius:10px;
+    height:15vh;
+}
+
+#general-info img {
+    width:20%;
+   margin-right:5%;
+}
+
+#general-info h1 {
+    font-size:0.8rem;
+    font-weight: 300;
+}
+
+#general-info h2 {
+    font-size:1rem;
+    font-weight:400;
+    margin:5% 0;
+}
+
+#timeframes {
+    color:hsl(235, 45%, 61%);
+    height:5vh;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#timeframes span:hover {
+    color:white;
+    cursor: pointer;
+}
+
+.active {
+    color:white;
+}
+
+#cards {
+    width:100%;
+    height:100%;
+}
+
+.card-container {
+    height:20vh;
+    width:90%;
+    margin:0 auto 5%;
+    display:flex;
+    flex-direction: column-reverse;
+    border-radius:15px;
+}
+
+.card {
+    border-radius:10px 15px;
+    height:15vh;
+    background-color:hsl(235, 46%, 20%);
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    transition:background-color 0.5s ease-out;
+}
+
+.card:hover {
+    background-color:hsl(235, 45%, 61%);
+    cursor:pointer;
+}
+
+.grid-element { 
+    display:flex;
+    align-items: center;
+}
+
+.grid-element h4, .grid-element p {
+    opacity:1;
+    transition:opacity 0.5s ease-out;
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from{opacity:0}
+    to{opacity:1}
+}
+
+.hide {
+    opacity:0 !important;
+}
+
+.grid-element h3{
+    font-size:0.9rem;
+    font-weight:500;
+}
+
+.grid-element h4 {
+    font-weight:300;
+    font-size:1.5rem;
+}
+
+.grid-element p {
+    color:hsl(236, 100%, 87%);
+    font-size:0.8rem;
+}
+
+.grid-element:nth-of-type(odd) {
+    margin-left:15%;
+}
+
+.grid-element:nth-of-type(even) {
+    justify-self:end;
+    margin-right:15%;
+}
+
+#work-card {
+    background:hsl(15, 100%, 70%) url("images/icon-work.svg") no-repeat right top;
+}
+
+#play-card {
+    background:hsl(195, 74%, 62%) url("images/icon-play.svg") no-repeat right top;
+}
+
+#study-card {
+    background:hsl(348, 100%, 68%) url("images/icon-study.svg") no-repeat right top; 
+}
+
+#exercise-card {
+    background:hsl(145, 58%, 55%) url("images/icon-exercise.svg") no-repeat right top; 
+}
+
+#social-card {
+    background:hsl(264, 64%, 52%) url("images/icon-social.svg") no-repeat right top; 
+
+}
+
+#selfcare-card {
+    background:hsl(43, 84%, 65%) url("images/icon-self-care.svg") no-repeat right top; 
+}
+
+footer {
+    font-size:1rem;
+    text-align: center;
+}
+
+footer a , footer a:active {
+    color:white;
+}
+
+@media screen and (min-width:815px) {
+    main {
+        justify-content: center;
+        align-items: center;
+    }
+    #container {
+        display:flex;
+        width:50rem;
+        height:50vh;
+    }
+
+    #cards {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width:40rem;
+        margin:0 auto;
+    }
+
+    #info-div {
+        width:15rem;
+        height:100%;
+        margin:0;
+    }
+
+    #general-info {
+        background-color:hsl(246, 80%, 60%);
+        border-radius:10px;
+        height:60%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding:10%;
+    }
+
+    #general-info h2 {
+        font-size:2rem;
+    }
+
+    #general-info img {
+        width:50%;
+        margin:0 0 10% 0;
+    }
+
+    #timeframes {
+        height:30%;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left:10%;
+    }
+
+    .card-container {
+        height:20vh;
+        width:30%;
+        margin:0;
+    }
+
+    .card {
+        height:14vh;
+        grid-template-columns:70% 30%;
+        grid-template-rows:repeat(3,33.33%);
+    }
+
+    .card .grid-element {
+        margin-left:15%;
+    }
+
+    .card .grid-element h4 {
+        font-size:2em;
+    }
+
+    .card .grid-element:nth-of-type(4){
+       grid-row:3;
+       grid-column:1;
+       width:100%;
+       justify-self:flex-start;
+    }
+
+    .card .grid-element:nth-of-type(4) p{
+        font-size:0.8rem;
+
+    }
+
+}
